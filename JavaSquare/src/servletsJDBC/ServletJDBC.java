@@ -20,9 +20,9 @@ public class ServletJDBC extends HttpServlet  {
 	
 	@Override
 	public void init() {
-			System.out.println("Started Execution");
-		
+		System.out.println("Started Execution");
 		}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		response.setContentType("text/html");
@@ -46,16 +46,16 @@ public class ServletJDBC extends HttpServlet  {
 		
 		try 
 		{
-			//registering Driver Class in RAM
+		//registering Driver Class in RAM
 			Class.forName("oracle.jdbc.OracleDriver");
 			
-			//getting SQL connection.
+		//getting SQL connection.
 			con = DriverManager.getConnection("jdbc:oracle:thin:https://192.168.0.11:5500/em" , "scott" , "tiger");
 			
-			//creating a SQL Query
+		//creating a SQL Query
 			String sqlQuery = "insert into Feedback values(?,?,?,?,?)";
 	        
-			//creating Prepared Statement
+		//creating Prepared Statement
 			stmt = con.prepareStatement(sqlQuery);
 			
 	        //Inserting Values into the table
@@ -64,23 +64,23 @@ public class ServletJDBC extends HttpServlet  {
 			stmt.setString(3,how);
 			stmt.setString(4,subject);
 			stmt.setString(5,message);
-			
+		
+		//Executing the Statement Prepared.		
 			stmt.executeUpdate();
 		
+		// An Simple acknowledgement page, just to say everything is successful.
 		
+			out = response.getWriter();
+			out.println("<html> <body>");
+			out.println("<font color = 'red' size = '15' > ");
+			out.println("<center> THANKS FOR THE FEEDBACK </center>");
+			out.println("</body> </html> " );
+
+			System.out.println("Data Entered Successfully");
 		
-		out = response.getWriter();
-		out.println("<html> <body>");
-		out.println("<font color = 'red' size = '15' > ");
-		out.println("<center> THANKS FOR THE FEEDBACK </center>");
-		out.println("</body> </html> " );
+		} 
 		
-		
-		System.out.println("Data Entered Successfully");
-		
-	
-		
-		} catch (Exception e) {
+		catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
