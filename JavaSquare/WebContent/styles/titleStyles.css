@@ -1,0 +1,27 @@
+
+#footer {
+	position:relative;bottom:20;left:0;right:0;height:30px;
+}
+
+#title {
+    background-color: #161714;    border: 2px;
+    border-radius: 10px; border-top-right-radius: 0px;border-top-left-radius: 0px;  
+       padding: 0px;    padding-bottom: 2px;   
+     text-align: center;    border: outset;    border-color: black;    width: 99%;  
+       align-content: center;    position: relative;    left: 5px;   top: 0px;    
+        } 
+#title:hover { background-color: #231e1e;  }
+ 
+#nameFont {
+    font-size: 40px; font-family: Felix titling; padding-bottom: 5px;    font-weight: 600;
+    position: relative;   text-align: center;    color: rgba(348, 200, 200, 0.96);
+}
+#nameFont:hover {  color: #70ab3a; }
+
+    
+#postFont {
+/*fonts:Edwardian Script ITC,   Rage Italic*/
+    font-family:  Edwardian Script ITC;	margin: 0px;	color: #d4ecbe;
+    font-size: 45px;    position: relative; text-align: center;
+}
+#postFont:hover {  color: #70ab3a; } 
